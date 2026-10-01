@@ -15,6 +15,7 @@
 <link rel="icon" type="image/png" href="img/favicon.png">
 
 
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -211,11 +212,6 @@ textarea{min-height:115px;resize:vertical;max-width:100%;display:block}input:foc
    Controla la presentación del asistente que transforma una idea
    escrita libremente en campos que el cliente puede revisar.
    ============================================================ */
-.ai-box{background:rgba(33,75,50,.06);border:1px solid rgba(33,75,50,.18);border-radius:22px;padding:22px;margin-bottom:10px;overflow:hidden;min-width:0}
-.ai-title{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--forest);margin-bottom:5px}.ai-title i{color:var(--gold)}
-.ai-box p{font-size:.84rem;color:var(--muted);margin-bottom:12px}.ai-box textarea{width:100%;max-width:100%;min-width:0;box-sizing:border-box;resize:vertical}.ai-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.ai-actions .btn{padding:10px 15px}
-.ai-status{font-size:.76rem;color:var(--muted);min-height:20px}.ai-status.ok{color:var(--forest);font-weight:700}.ai-status.bad{color:#a23737;font-weight:700}
-.ai-example{font-size:.72rem;color:var(--muted);margin-top:7px;font-style:italic}
 
 footer{margin-top:52px;background:#2c1e1a;color:#fff;padding:42px 0}
 
@@ -248,38 +244,12 @@ footer{margin-top:52px;background:#2c1e1a;color:#fff;padding:42px 0}
  .footer{flex-direction:column;align-items:flex-start}
 
 }
-/* Corrección definitiva de columnas del formulario */
-.row {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: 28px;
-    row-gap: 12px;
-    width: 100%;
-}
 
-.row .field {
-    min-width: 0;
-    width: 100%;
-}
-
-.row input,
-.row select,
-.row textarea {
-    display: block;
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-@media (max-width: 620px) {
-    .row {
-        grid-template-columns: 1fr;
-    }
-}
 </style>
 
 </head>
+
+
 
 <body>
 
@@ -444,21 +414,6 @@ footer{margin-top:52px;background:#2c1e1a;color:#fff;padding:42px 0}
 
 
   <form id="form" novalidate>
-
-    <!-- ASISTENTE IA: #aiAnalyze toma el texto libre y consulta el backend seguro. -->
-    <div class="ai-box" id="aiBox">
-      <div class="ai-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Asistente para organizar tu idea</div>
-      <p>Escribe tu idea como la contarías normalmente. La IA intentará ordenar los datos del pedido y tú podrás revisarlos antes de enviar.</p>
-      <div class="field">
-        <label for="aiIdea">Describe lo que imaginas</label>
-        <textarea id="aiIdea" maxlength="700" placeholder="Ej.: Quiero un Batman de unos 30 cm, negro y gris, para un cumpleaños el 15 de octubre."></textarea>
-      </div>
-      <div class="ai-actions">
-        <button class="btn secondary" type="button" id="aiAnalyze"><i class="fa-solid fa-wand-magic-sparkles"></i> Organizar mi idea con IA</button>
-        <span class="ai-status" id="aiStatus" aria-live="polite"></span>
-      </div>
-      <div class="ai-example">La IA solo organiza la solicitud. Precio, disponibilidad y plazo siempre los confirma personalmente La Tela de Charllot.</div>
-    </div>
 
    <div class="row">
 
@@ -733,39 +688,6 @@ document.getElementById("preview").addEventListener("click",()=>{
 });
 
 
-
-// ============================================================
-// ASISTENTE IA — botón #aiAnalyze
-// 1. Lee el texto libre de #aiIdea.
-// 2. Hace POST al backend seguro (CONFIG.aiEndpoint).
-// 3. El backend habla con el modelo; la clave secreta queda en servidor.
-// 4. Recibe JSON y completa campos del formulario.
-// 5. El cliente revisa/corrige antes de WhatsApp.
-// Si falla la IA, el formulario manual sigue disponible.
-// ============================================================
-const aiIdea=document.getElementById("aiIdea");
-const aiAnalyze=document.getElementById("aiAnalyze");
-const aiStatus=document.getElementById("aiStatus");
-function setAIStatus(message,type=""){aiStatus.textContent=message;aiStatus.className="ai-status"+(type?` ${type}`:"")}
-function mapAISize(value){const v=clean(value).toLowerCase();if(v.includes("peque"))return "Pequeño";if(v.includes("media"))return "Mediano";if(v.includes("grand"))return "Grande";return "Por definir"}
-
-aiAnalyze.addEventListener("click",async()=>{
- const idea=clean(aiIdea.value);
- if(idea.length<10){setAIStatus("Cuéntanos un poco más para que la IA pueda ayudarte.","bad");aiIdea.focus();return}
- aiAnalyze.disabled=true;aiAnalyze.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Organizando...';setAIStatus("Analizando tu idea…");
- try{
-  const response=await fetch(CONFIG.aiEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({idea})});
-  if(!response.ok)throw new Error("El servicio de IA no respondió correctamente");
-  const result=await response.json();
-  // La IA NO decide precio, stock, disponibilidad ni plazo.
-  if(result.size)document.getElementById("size").value=mapAISize(result.size);
-  if(result.colors)document.getElementById("colors").value=clean(result.colors);
-  const details=[result.subject?`Idea/personaje: ${clean(result.subject)}`:"",result.occasion?`Ocasión: ${clean(result.occasion)}`:"",result.date?`Fecha deseada: ${clean(result.date)}`:"",result.notes?clean(result.notes):""].filter(Boolean).join(". ");
-  document.getElementById("details").value=details||idea;
-  resetApproval();setAIStatus("Listo. Revisa los datos que completamos antes de continuar.","ok");document.getElementById("details").focus();
- }catch(error){console.error("Error del asistente IA:",error);setAIStatus("No pudimos organizar tu idea automáticamente. Puedes continuar completando el formulario manualmente.","bad")}
- finally{aiAnalyze.disabled=false;aiAnalyze.innerHTML='<i class="fa-solid fa-wand-magic-sparkles"></i> Organizar mi idea con IA'}
-});
 
 // BOTÓN "Enviar solicitud por WhatsApp": arma el mensaje estructurado y abre wa.me.
 document.getElementById("form").addEventListener("submit",e=>{
