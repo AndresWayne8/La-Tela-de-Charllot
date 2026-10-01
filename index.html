@@ -248,27 +248,38 @@ footer{margin-top:52px;background:#2c1e1a;color:#fff;padding:42px 0}
  .footer{flex-direction:column;align-items:flex-start}
 
 }
-/* Corrección de solapamiento en formulario */
-.form-grid {
-    gap: 24px;
-}
-
-.form-grid > * {
-    min-width: 0;
-}
-
-.form-grid input,
-.form-grid select,
-.form-grid textarea {
+/* Corrección definitiva de columnas del formulario */
+.row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 28px;
+    row-gap: 12px;
     width: 100%;
+}
+
+.row .field {
+    min-width: 0;
+    width: 100%;
+}
+
+.row input,
+.row select,
+.row textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
     max-width: 100%;
     box-sizing: border-box;
+}
+
+@media (max-width: 620px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 
 </head>
-
-
 
 <body>
 
