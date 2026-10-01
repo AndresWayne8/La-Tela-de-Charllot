@@ -15,7 +15,6 @@
 <link rel="icon" type="image/png" href="img/favicon.png">
 
 
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -249,7 +248,22 @@ footer{margin-top:52px;background:#2c1e1a;color:#fff;padding:42px 0}
  .footer{flex-direction:column;align-items:flex-start}
 
 }
+/* Corrección de solapamiento en formulario */
+.form-grid {
+    gap: 24px;
+}
 
+.form-grid > * {
+    min-width: 0;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 </style>
 
 </head>
