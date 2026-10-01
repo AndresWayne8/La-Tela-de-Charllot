@@ -167,6 +167,37 @@ h1 span{color:var(--wine)}
 
 
 
+
+/* Historia real del emprendimiento */
+.story{grid-template-columns:1fr;gap:28px}
+.story-intro{display:grid;grid-template-columns:.92fr 1.08fr;gap:34px;align-items:center}
+.story-origin-photo{position:relative;border-radius:26px;overflow:hidden;background:#173d29;border:8px solid rgba(255,250,244,.92);min-height:390px}
+.story-origin-photo img{width:100%;height:100%;min-height:390px;object-fit:cover}
+.story-origin-label{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,250,244,.94);color:var(--ink);padding:13px 15px;border-radius:16px;backdrop-filter:blur(7px)}
+.story-origin-label strong{display:block;color:var(--wine);margin-bottom:2px}
+.story-origin-label small{color:var(--muted)}
+.story-quote{display:grid;grid-template-columns:.76fr 1.24fr;gap:24px;align-items:center;background:rgba(255,250,244,.08);border:1px solid rgba(255,250,244,.14);border-radius:25px;padding:20px}
+.story-quote img{width:100%;max-height:310px;object-fit:contain;border-radius:18px;background:#fff}
+.story-quote-copy .kicker{margin-bottom:9px}
+.story-quote-copy h3{font-size:clamp(1.8rem,3vw,2.7rem);margin-bottom:10px}
+.story-quote-copy p{margin-top:0}
+.story-quote-copy strong{color:#efbd78}
+
+/* Interacción sutil en los tres pasos */
+.step{transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease}
+.step:hover{transform:translateY(-10px);box-shadow:0 22px 42px rgba(55,36,29,.14);border-color:rgba(123,64,68,.25)}
+.step:hover .number{transform:scale(1.08)}
+.number{transition:transform .24s ease}
+
+@media(max-width:930px){
+ .story-intro,.story-quote{grid-template-columns:1fr}
+ .story-origin-photo,.story-origin-photo img{min-height:340px}
+}
+@media(max-width:620px){
+ .story-origin-photo,.story-origin-photo img{min-height:300px}
+ .story-quote{padding:14px}
+}
+
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 
 .step{background:var(--paper);border:1px solid var(--line);border-radius:25px;padding:25px;box-shadow:0 10px 26px rgba(55,36,29,.06)}
@@ -193,11 +224,11 @@ h1 span{color:var(--wine)}
 
 .order-copy>p{color:var(--muted);margin:12px 0 20px}.order-points{display:grid;gap:10px}.order-points div{display:flex;gap:11px;color:var(--muted)}.order-points i{color:var(--forest);margin-top:5px}
 
-form{display:grid;gap:12px;width:100%;min-width:0}.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;row-gap:12px;width:100%;min-width:0}
+form{display:grid;gap:12px}.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;width:100%}
 
-.field{display:grid;gap:6px;min-width:0;width:100%;overflow:visible}.field label{font-size:.79rem;font-weight:800}
+.field{display:grid;gap:6px;min-width:0}.field label{font-size:.79rem;font-weight:800}
 
-input,select,textarea{display:block;width:100%;min-width:0;max-width:100%;box-sizing:border-box;border:1px solid rgba(53,35,29,.16);border-radius:15px;background:rgba(255,255,255,.88);padding:13px 14px;color:var(--ink);outline:none}
+input,select,textarea{width:100%;border:1px solid rgba(53,35,29,.16);border-radius:15px;background:rgba(255,255,255,.88);padding:13px 14px;color:var(--ink);outline:none}
 
 textarea{min-height:115px;resize:vertical;max-width:100%;display:block}input:focus,select:focus,textarea:focus{border-color:var(--wine);box-shadow:0 0 0 4px rgba(123,64,68,.08)}
 
@@ -220,6 +251,16 @@ textarea{min-height:115px;resize:vertical;max-width:100%;display:block}input:foc
    escrita libremente en campos que el cliente puede revisar.
    ============================================================ */
 
+
+.footer-brand{display:flex;flex-direction:column;align-items:flex-start;max-width:680px}
+.footer-logo{display:block;width:min(285px,72vw);height:auto;max-height:76px;object-fit:contain;object-position:left center;margin:0 0 18px;filter:brightness(0) invert(1);opacity:.94}
+.footer-brand p{margin:0 0 10px}
+.footer-brand small{display:block}
+@media(max-width:700px){
+ .footer-brand{align-items:center;text-align:center}
+ .footer-logo{width:min(245px,72vw);object-position:center;margin-bottom:15px}
+}
+
 footer{margin-top:52px;background:#2c1e1a;color:#fff;padding:42px 0}
 
 .footer{display:flex;align-items:center;justify-content:space-between;gap:25px}.footer h2{font-size:1.8rem}.footer p{color:rgba(255,255,255,.7);margin:4px 0}.footer small{color:rgba(255,255,255,.58)}.wayne{color:#efbd78;font-weight:800}.wayne:hover{text-decoration:underline;color:#fff}
@@ -237,8 +278,6 @@ footer{margin-top:52px;background:#2c1e1a;color:#fff;padding:42px 0}
  .menu{display:grid;place-items:center}.desktop-wsp{display:none}.hero-photo>img{height:410px}
 
 }
-
-@media(max-width:700px){.row{grid-template-columns:1fr;column-gap:0}}
 
 @media(max-width:620px){
 
@@ -355,21 +394,41 @@ footer{margin-top:52px;background:#2c1e1a;color:#fff;padding:42px 0}
 
 
 <section class="section container" id="historia">
-
  <div class="story">
 
-   <div class="logo-panel"><img src="img/logo.png" alt="Logo original de La Tela de Charllot"></div>
+   <div class="story-intro">
+     <div class="story-origin-photo">
+       <img src="img/charllot.jpg" alt="Primeros tejidos de La Tela de Charllot">
+       <div class="story-origin-label">
+         <strong>Donde comenzó la historia.</strong>
+         <small>Uno de los primeros tejidos que dio origen a La Tela de Charllot.</small>
+       </div>
+     </div>
 
-   <div><div class="kicker">Nuestra historia</div><h2>Una marca nacida desde lo artesanal.</h2>
+     <div>
+       <div class="kicker">Nuestra historia</div>
+       <h2>Una marca nacida desde lo artesanal.</h2>
+       <p>La Tela de Charllot nació del gusto por el tejido y la creación de piezas hechas a mano. Lo que comenzó con los primeros trabajos personales fue creciendo, encargo a encargo, hasta convertirse en una colección de personajes, regalos y piezas personalizadas.</p>
 
-   <p>La Tela de Charllot nació del gusto por el tejido y la creación de piezas hechas a mano. Con el tiempo, cada encargo fue dando forma a una colección de personajes, regalos y detalles personalizados.</p>
+       <div class="story-points">
+         <div><i class="fa-solid fa-check"></i><span>Piezas elaboradas a mano y por encargo.</span></div>
+         <div><i class="fa-solid fa-check"></i><span>Diseños inspirados en ideas, personajes y ocasiones especiales.</span></div>
+         <div><i class="fa-solid fa-check"></i><span>Atención cercana para definir cada detalle antes de comenzar.</span></div>
+       </div>
+     </div>
+   </div>
 
-   <div class="story-points"><div><i class="fa-solid fa-check"></i><span>Piezas elaboradas a mano y por encargo.</span></div><div><i class="fa-solid fa-check"></i><span>Diseños inspirados en ideas, personajes y ocasiones especiales.</span></div><div><i class="fa-solid fa-check"></i><span>Atención cercana para definir cada detalle antes de comenzar.</span></div></div>
-
+   <div class="story-quote">
+     <img src="img/consejo.jpg" alt="Reflexión sobre el valor del trabajo artesanal">
+     <div class="story-quote-copy">
+       <div class="kicker">El valor de lo hecho a mano</div>
+       <h3>Detrás de cada pieza hay tiempo, dedicación y aprendizaje.</h3>
+       <p>Cada tejido reúne horas de trabajo, pruebas y detalles realizados a mano. Por eso, cada encargo busca conservar el carácter personal que dio origen al emprendimiento.</p>
+       <p><strong>Si es tradición, no pasa de moda.</strong></p>
+     </div>
    </div>
 
  </div>
-
 </section>
 
 
@@ -465,15 +524,19 @@ footer{margin-top:52px;background:#2c1e1a;color:#fff;padding:42px 0}
 
 
 <footer>
-
  <div class="container footer">
+  <div class="footer-brand">
+   <img class="footer-logo" src="img/logo-footer.png" alt="La Tela de Charllot">
+   <p>Amigurumis y tejidos personalizados hechos a mano.</p>
+   <small>Si es tradición, no pasa de moda. · Sitio desarrollado por <a class="wayne" id="wayne" href="#" target="_blank" rel="noopener">Wayne Dev</a></small>
+  </div>
 
-  <div><h2>La Tela de Charllot</h2><p>Amigurumis y tejidos personalizados hechos a mano.</p><small>Si es tradición, no pasa de moda. · Sitio desarrollado por <a class="wayne" id="wayne" href="#" target="_blank" rel="noopener">Wayne Dev</a></small></div>
-
-  <div class="social"><a id="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a id="facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a id="footerWsp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div>
-
+  <div class="social">
+   <a id="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+   <a id="facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+   <a id="footerWsp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
  </div>
-
 </footer>
 
 
