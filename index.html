@@ -1,866 +1,1741 @@
 <!doctype html>
 
+
+
 <html lang="es">
+
+
 
 <head>
 
+
+
 <meta charset="utf-8">
+
+
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
+
+
 <meta name="description" content="La Tela de Charllot — amigurumis y tejidos personalizados hechos a mano.">
 
+
+
 <title>La Tela de Charllot | Amigurumis hechos a mano</title>
+
+
 
 <link rel="icon" type="image/png" href="img/favicon.png">
 
 
 
+
+
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
 
+
+
+
+
 <style>
+
+
 
 :root{
 
-  --cream:#f5e8d8;--paper:#fffaf4;--ink:#35231d;--muted:#79645a;
 
-  --wine:#7b4044;--forest:#214b32;--gold:#c59455;--line:rgba(53,35,29,.12);
 
-  --shadow:0 18px 45px rgba(58,39,30,.10);--radius:28px
+  --cream:#f5e8d8;--paper:#fffaf4;--ink:#35231d;--muted:#79645a;
+
+
+
+  --wine:#7b4044;--forest:#214b32;--gold:#c59455;--line:rgba(53,35,29,.12);
+
+
+
+  --shadow:0 18px 45px rgba(58,39,30,.10);--radius:28px
+
+
 
 }
 
-\*{box-sizing:border-box;margin:0;padding:0}
+
+
+\\*{box-sizing:border-box;margin:0;padding:0}
+
+
 
 html{scroll-behavior:smooth;scroll-padding-top:92px}
 
+
+
 body{font-family:Inter,Arial,sans-serif;color:var(--ink);line-height:1.6;background:linear-gradient(180deg,#f7eadc 0%,#f4e8d8 55%,#efe7d9 100%)}
+
+
 
 a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}img{display:block;max-width:100%}
 
+
+
 .container{width:min(1180px,92%);margin:auto}
+
+
 
 .topbar{background:var(--forest);color:#fff;padding:7px 15px;text-align:center;font-size:.82rem}
 
+
+
 header{position:sticky;top:0;z-index:100;background:rgba(247,235,220,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+
+
 
 .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 
+
+
 .brand{display:flex;align-items:center;gap:12px;font:700 1.55rem "Cormorant Garamond",serif;white-space:nowrap}
+
+
 
 .brand img{width:88px;height:54px;object-fit:contain;border:0;border-radius:0;background:transparent}
 
+
+
 .links{display:flex;align-items:center;gap:24px;font-weight:700;color:#705b51;font-size:.9rem}
+
+
 
 .links a:hover{color:var(--wine)}
 
+
+
 .btn{border:0;border-radius:999px;padding:12px 19px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:800;transition:.2s}
+
+
 
 .btn:hover{transform:translateY(-2px)}
 
+
+
 .primary{background:var(--wine);color:#fff;box-shadow:0 12px 28px rgba(123,64,68,.18)}
+
+
 
 .secondary{background:rgba(255,250,244,.65);border:1px solid rgba(123,64,68,.3);color:var(--wine)}
 
+
+
 .green{background:#1fa75a;color:#fff}
+
+
 
 .menu{display:none;border:1px solid var(--line);background:var(--paper);width:44px;height:44px;border-radius:50%}
 
 
 
+
+
+
+
 .hero{padding:62px 0 54px;display:grid;grid-template-columns:1.04fr .96fr;gap:50px;align-items:center}
+
+
 
 .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.65);border:1px solid var(--line);padding:8px 14px;border-radius:999px;color:var(--forest);font-weight:800}
 
+
+
 h1,h2,h3{font-family:"Cormorant Garamond",serif;line-height:1.02}
+
+
 
 h1{font-size:clamp(3.5rem,6.4vw,6.1rem);margin:22px 0 20px;letter-spacing:-1px}
 
+
+
 h1 span{color:var(--wine)}
+
+
 
 .hero-copy>p{font-size:1.08rem;color:var(--muted);max-width:650px}
 
+
+
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+
+
 
 .motto{font:italic 1.15rem "Cormorant Garamond",serif;color:var(--forest);margin-top:19px}
 
+
+
 .hero-photo{position:relative;border:10px solid rgba(255,250,244,.85);border-radius:34px;overflow:hidden;box-shadow:var(--shadow);background:#eadfd2}
 
+
+
 .hero-photo>img{width:100%;height:510px;object-fit:cover;transition:opacity .45s ease,transform .65s ease}
+
 .hero-photo>img.is-changing{opacity:.18;transform:scale(1.015)}
+
 .hero-slider-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(45,27,23,.52);color:#fff;display:grid;place-items:center;cursor:pointer;font-size:1.15rem;backdrop-filter:blur(6px);transition:.2s ease}
+
 .hero-slider-btn:hover{background:rgba(123,64,68,.88);transform:translateY(-50%) scale(1.05)}
+
 .hero-slider-prev{left:18px}.hero-slider-next{right:18px}
+
 .hero-dots{position:absolute;z-index:4;left:50%;transform:translateX(-50%);bottom:118px;display:flex;gap:7px}
+
 .hero-dot{width:8px;height:8px;border:0;border-radius:50%;padding:0;background:rgba(255,255,255,.55);cursor:pointer;box-shadow:0 1px 5px rgba(0,0,0,.15)}
+
 .hero-dot.active{background:#fff;transform:scale(1.25)}
 
+
+
 .photo-caption{position:absolute;left:20px;right:20px;bottom:20px;background:rgba(255,250,244,.93);backdrop-filter:blur(8px);padding:15px 18px;border-radius:20px}
+
+
 
 .photo-caption strong{display:block;color:var(--wine)}.photo-caption small{color:var(--muted)}
 
 
 
+
+
+
+
 .section{padding:52px 0}
+
+
 
 .section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:26px}
 
+
+
 .kicker{text-transform:uppercase;letter-spacing:.13em;font-size:.72rem;font-weight:900;color:var(--forest);margin-bottom:7px}
+
+
 
 .section-head h2,.story h2,.care h2,.order h2{font-size:clamp(2.6rem,4.6vw,4.2rem)}
 
+
+
 .section-head p{max-width:590px;color:var(--muted)}
+
+
 
 .filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}
 
+
+
 .filter{border:1px solid var(--line);background:rgba(255,250,244,.78);padding:9px 15px;border-radius:999px;color:var(--muted);font-weight:800}
+
+
 
 .filter.active,.filter:hover{background:var(--forest);color:#fff}
 
+
+
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+
 
 .card{background:rgba(255,250,244,.96);border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:0 12px 30px rgba(55,36,29,.07);transition:.2s}
 
+
+
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+
+
 
 .card-media{position:relative;height:330px;background:#e9dfd4;overflow:hidden}
 
+
+
 .card-media img{width:100%;height:100%;object-fit:contain;background:#eee4da}
+
+
 
 .badge{position:absolute;top:13px;left:13px;background:rgba(255,250,244,.94);padding:7px 11px;border-radius:999px;color:var(--forest);font-size:.69rem;font-weight:900}
 
+
+
 .card-body{padding:19px}
+
+
 
 .category{display:inline-block;padding:5px 10px;border-radius:999px;background:#efd7cd;color:var(--wine);font-size:.7rem;font-weight:900;text-transform:capitalize}
 
+
+
 .card h3{font-size:1.8rem;margin:10px 0 7px}
+
+
 
 .card p{color:var(--muted);font-size:.9rem;min-height:44px}
 
+
+
 .card-bottom{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-top:16px}
+
+
 
 .card-bottom strong{display:block;font-size:.9rem}.card-bottom small{color:var(--muted);font-size:.76rem}
 
+
+
 .card .btn{padding:10px 14px;font-size:.78rem}
+
+
 
 .more-wrap{text-align:center;margin-top:25px}
 
 
 
+
+
+
+
 .story{background:var(--forest);color:#fffaf4;border-radius:34px;padding:34px;display:grid;grid-template-columns:.62fr 1.38fr;gap:38px;align-items:center;box-shadow:var(--shadow)}
+
+
 
 .logo-panel{background:#f3f1ed;border-radius:25px;padding:20px;display:grid;place-items:center}
 
+
+
 .logo-panel img{width:100%;max-height:330px;object-fit:contain}
 
+
+
 .story .kicker{color:#efbd78}.story p{color:rgba(255,250,244,.8);margin-top:13px}
+
+
 
 .story-points{display:grid;gap:10px;margin-top:19px}.story-points div{display:flex;gap:11px}.story-points i{color:#efbd78;margin-top:5px}
 
 
 
 
+
+
+
+
+
 /* Historia real del emprendimiento */
+
 .story{grid-template-columns:1fr;gap:28px}
+
 .story-intro{display:grid;grid-template-columns:.92fr 1.08fr;gap:34px;align-items:center}
+
 .story-origin-photo{position:relative;border-radius:26px;overflow:hidden;background:#173d29;border:8px solid rgba(255,250,244,.92);min-height:390px}
+
 .story-origin-photo img{width:100%;height:100%;min-height:390px;object-fit:cover}
+
 .story-origin-label{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,250,244,.94);color:var(--ink);padding:13px 15px;border-radius:16px;backdrop-filter:blur(7px)}
+
 .story-origin-label strong{display:block;color:var(--wine);margin-bottom:2px}
+
 .story-origin-label small{color:var(--muted)}
+
 .story-quote{display:grid;grid-template-columns:.76fr 1.24fr;gap:24px;align-items:center;background:rgba(255,250,244,.08);border:1px solid rgba(255,250,244,.14);border-radius:25px;padding:20px}
+
 .story-quote img{width:100%;max-height:310px;object-fit:contain;border-radius:18px;background:#fff}
+
 .story-quote-copy .kicker{margin-bottom:9px}
+
 .story-quote-copy h3{font-size:clamp(1.8rem,3vw,2.7rem);margin-bottom:10px}
+
 .story-quote-copy p{margin-top:0}
+
 .story-quote-copy strong{color:#efbd78}
 
+
+
 /* Interacción sutil en los tres pasos */
+
 .step{transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease}
+
 .step:hover{transform:translateY(-10px);box-shadow:0 22px 42px rgba(55,36,29,.14);border-color:rgba(123,64,68,.25)}
+
 .step:hover .number{transform:scale(1.08)}
+
 .number{transition:transform .24s ease}
 
+
+
 @media(max-width:930px){
- .story-intro,.story-quote{grid-template-columns:1fr}
- .story-origin-photo,.story-origin-photo img{min-height:340px}
+
+ .story-intro,.story-quote{grid-template-columns:1fr}
+
+ .story-origin-photo,.story-origin-photo img{min-height:340px}
+
 }
+
 @media(max-width:620px){
- .story-origin-photo,.story-origin-photo img{min-height:300px}
- .story-quote{padding:14px}
+
+ .story-origin-photo,.story-origin-photo img{min-height:300px}
+
+ .story-quote{padding:14px}
+
 }
+
+
 
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 
+
+
 .step{background:var(--paper);border:1px solid var(--line);border-radius:25px;padding:25px;box-shadow:0 10px 26px rgba(55,36,29,.06)}
 
+
+
 .number{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:#fff;font-weight:900;margin-bottom:15px}
+
+
 
 .step h3{font-size:1.75rem;margin-bottom:7px}.step p{color:var(--muted)}
 
 
 
+
+
+
+
 .care{background:rgba(255,250,244,.92);border:1px solid var(--line);border-radius:34px;padding:30px;display:grid;grid-template-columns:.9fr 1.1fr;gap:35px;align-items:center;box-shadow:var(--shadow)}
+
+
 
 .care-photo{border-radius:24px;overflow:hidden;background:#eee}
 
+
+
 .care-photo img{width:100%;max-height:500px;object-fit:contain}
 
+
+
 .care p{color:var(--muted);margin:12px 0 19px}
+
+
 
 .tips{display:grid;gap:11px}.tip{display:flex;gap:11px}.tip i{color:var(--forest);margin-top:5px}.tip span{color:var(--muted)}
 
 
 
+
+
+
+
 .order{background:linear-gradient(135deg,#fffaf4,#f2ded0);border:1px solid var(--line);border-radius:34px;padding:34px;display:grid;grid-template-columns:.82fr 1.18fr;gap:40px;box-shadow:var(--shadow)}
+
+
 
 .order-copy>p{color:var(--muted);margin:12px 0 20px}.order-points{display:grid;gap:10px}.order-points div{display:flex;gap:11px;color:var(--muted)}.order-points i{color:var(--forest);margin-top:5px}
 
+
+
 form{display:grid;gap:12px}.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;width:100%}
+
+
 
 .field{display:grid;gap:6px;min-width:0}.field label{font-size:.79rem;font-weight:800}
 
+
+
 input,select,textarea{width:100%;border:1px solid rgba(53,35,29,.16);border-radius:15px;background:rgba(255,255,255,.88);padding:13px 14px;color:var(--ink);outline:none}
+
+
 
 textarea{min-height:115px;resize:vertical;max-width:100%;display:block}input:focus,select:focus,textarea:focus{border-color:var(--wine);box-shadow:0 0 0 4px rgba(123,64,68,.08)}
 
+
+
 .error{color:#a23737;font-size:.72rem;min-height:15px}.invalid{border-color:#a23737!important}
+
+
 
 .summary{display:none;background:rgba(33,75,50,.07);border:1px solid rgba(33,75,50,.2);border-radius:18px;padding:15px}
 
+
+
 .summary.show{display:block}.summary h3{font-size:1.45rem;margin-bottom:7px}.summary p{font-size:.86rem;color:var(--muted);min-height:auto}
 
-#send{display:none}#send.ready{display:inline-flex}
+
+
+\#send{display:none}#send.ready{display:inline-flex}
+
+
 
 .note-small{font-size:.73rem;color:var(--muted)}
 
 
 
 
+
+
+
+
+
 /* ============================================================
-   MÓDULO IA — INTERFAZ
-   Controla la presentación del asistente que transforma una idea
-   escrita libremente en campos que el cliente puede revisar.
-   ============================================================ */
+
+   MÓDULO IA — INTERFAZ
+
+   Controla la presentación del asistente que transforma una idea
+
+   escrita libremente en campos que el cliente puede revisar.
+
+   ============================================================ */
+
+
+
 
 
 .footer-brand{display:flex;flex-direction:column;align-items:flex-start;max-width:680px}
-.footer-logo{display:block;width:min(285px,72vw);height:auto;max-height:76px;object-fit:contain;object-position:left center;margin:0 0 18px;filter:brightness(0) invert(1);opacity:.94}
+
+.footer-logo{display:block;width:min(285px,72vw);height:auto;max-height:76px;object-fit:contain;object-position:left center;margin:0 0 18px;opacity:.96}
+
 .footer-brand p{margin:0 0 10px}
+
 .footer-brand small{display:block}
+
 @media(max-width:700px){
- .footer-brand{align-items:center;text-align:center}
- .footer-logo{width:min(245px,72vw);object-position:center;margin-bottom:15px}
+
+ .footer-brand{align-items:center;text-align:center}
+
+ .footer-logo{width:min(245px,72vw);object-position:center;margin-bottom:15px}
+
 }
+
+
 
 footer{margin-top:52px;background:#2c1e1a;color:#fff;padding:42px 0}
 
+
+
 .footer{display:flex;align-items:center;justify-content:space-between;gap:25px}.footer h2{font-size:1.8rem}.footer p{color:rgba(255,255,255,.7);margin:4px 0}.footer small{color:rgba(255,255,255,.58)}.wayne{color:#efbd78;font-weight:800}.wayne:hover{text-decoration:underline;color:#fff}
+
+
 
 .social{display:flex;gap:11px}.social a{width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1)}.social a:hover{background:var(--wine)}
 
 
 
+
+
+
+
 @media(max-width:930px){
 
- .hero,.story,.care,.order{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}
 
- .links{position:fixed;left:0;right:0;top:78px;background:var(--paper);padding:22px 4%;display:none;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow)}.links.open{display:flex}
 
- .menu{display:grid;place-items:center}.desktop-wsp{display:none}.hero-photo>img{height:410px}
+ .hero,.story,.care,.order{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}
+
+
+
+ .links{position:fixed;left:0;right:0;top:78px;background:var(--paper);padding:22px 4%;display:none;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow)}.links.open{display:flex}
+
+
+
+ .menu{display:grid;place-items:center}.desktop-wsp{display:none}.hero-photo>img{height:410px}
+
+
 
 }
+
+
 
 @media(max-width:620px){
 
- .topbar{font-size:.72rem}.brand{font-size:1.18rem}.brand img{width:70px;height:43px}
 
- .hero{padding:40px 0 36px;gap:28px}.hero-photo>img{height:330px}.hero-actions .btn{width:100%}
 
- .section{padding:39px 0}.section-head{display:block}.section-head p{margin-top:10px}
+ .topbar{font-size:.72rem}.brand{font-size:1.18rem}.brand img{width:70px;height:43px}
 
- .grid,.steps,.row{grid-template-columns:1fr}.card-media{height:310px}.story,.care,.order{padding:22px;border-radius:25px}
 
- .footer{flex-direction:column;align-items:flex-start}
+
+ .hero{padding:40px 0 36px;gap:28px}.hero-photo>img{height:330px}.hero-actions .btn{width:100%}
+
+
+
+ .section{padding:39px 0}.section-head{display:block}.section-head p{margin-top:10px}
+
+
+
+ .grid,.steps,.row{grid-template-columns:1fr}.card-media{height:310px}.story,.care,.order{padding:22px;border-radius:25px}
+
+
+
+ .footer{flex-direction:column;align-items:flex-start}
+
+
 
 }
 
+
+
+
+/* ===== CORRECCIONES FINALES: formulario y footer ===== */
+.order{grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr)}
+.order form{min-width:0;width:100%}
+.order .row{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.order .field,.order input,.order select,.order textarea{min-width:0;max-width:100%}
+.order select{display:block}
+@media(max-width:1120px){.order{grid-template-columns:1fr}}
+@media(max-width:760px){.order .row{grid-template-columns:1fr}}
+
 </style>
+
+
 
 </head>
 
 
 
+
+
+
+
 <body>
+
+
 
 <div class="topbar">Pedidos personalizados · Hecho a mano · Entregas por coordinar</div>
 
 
 
+
+
+
+
 <header>
 
- <div class="container nav">
 
-   <a class="brand" href="#inicio"><img src="img/logo-header.png" alt="La Tela de Charllot"><span>La Tela de Charllot</span></a>
 
-   <nav class="links" id="nav">
+ <div class="container nav">
 
-     <a href="#trabajos">Trabajos</a><a href="#historia">Nuestra historia</a><a href="#como-pedir">Cómo pedir</a><a href="#cuidados">Cuidados</a><a href="#pedido">Pedidos</a>
 
-   </nav>
 
-   <div style="display:flex;align-items:center;gap:10px">
+   <a class="brand" href="#inicio"><img src="img/logo-header.png" alt="La Tela de Charllot"><span>La Tela de Charllot</span></a>
 
-     <a class="btn primary desktop-wsp" id="topWsp" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
 
-     <button class="menu" id="menu" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
 
-   </div>
+   <nav class="links" id="nav">
 
- </div>
+
+
+     <a href="#trabajos">Trabajos</a><a href="#historia">Nuestra historia</a><a href="#como-pedir">Cómo pedir</a><a href="#cuidados">Cuidados</a><a href="#pedido">Pedidos</a>
+
+
+
+   </nav>
+
+
+
+   <div style="display:flex;align-items:center;gap:10px">
+
+
+
+     <a class="btn primary desktop-wsp" id="topWsp" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+
+
+
+     <button class="menu" id="menu" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+
+
+
+   </div>
+
+
+
+ </div>
+
+
 
 </header>
 
 
 
+
+
+
+
 <main>
+
+
 
 <section class="container hero" id="inicio">
 
- <div class="hero-copy">
 
-   <span class="pill"><i class="fa-solid fa-heart"></i> Tejidos con historia</span>
 
-   <h1>Personajes únicos, <span>hechos a mano.</span></h1>
+ <div class="hero-copy">
 
-   <p>Amigurumis y tejidos personalizados creados con dedicación. Descubre trabajos realizados por La Tela de Charllot y cuéntanos tu idea para crear algo especial.</p>
 
-   <div class="hero-actions">
 
-     <a class="btn primary" href="#trabajos"><i class="fa-regular fa-images"></i> Ver trabajos</a>
+   <span class="pill"><i class="fa-solid fa-heart"></i> Tejidos con historia</span>
 
-     <a class="btn secondary" href="#pedido"><i class="fa-solid fa-wand-magic-sparkles"></i> Quiero uno personalizado</a>
 
-   </div>
 
-   <div class="motto">Si es tradición, no pasa de moda.</div>
+   <h1>Personajes únicos, <span>hechos a mano.</span></h1>
 
- </div>
 
- <div class="hero-photo">
 
-   <img id="heroSlideImage" src="img/unicornio.jpg" alt="Unicornio tejido a mano">
-   <button class="hero-slider-btn hero-slider-prev" id="heroPrev" type="button" aria-label="Imagen anterior"><i class="fa-solid fa-chevron-left"></i></button>
-   <button class="hero-slider-btn hero-slider-next" id="heroNext" type="button" aria-label="Imagen siguiente"><i class="fa-solid fa-chevron-right"></i></button>
-   <div class="hero-dots" id="heroDots" aria-label="Selector de imágenes"></div>
-   <div class="photo-caption"><strong id="heroSlideTitle">De una idea a un tejido único.</strong><small id="heroSlideText">Colores, tamaños y detalles pueden personalizarse según cada encargo.</small></div>
+   <p>Amigurumis y tejidos personalizados creados con dedicación. Descubre trabajos realizados por La Tela de Charllot y cuéntanos tu idea para crear algo especial.</p>
 
- </div>
+
+
+   <div class="hero-actions">
+
+
+
+     <a class="btn primary" href="#trabajos"><i class="fa-regular fa-images"></i> Ver trabajos</a>
+
+
+
+     <a class="btn secondary" href="#pedido"><i class="fa-solid fa-wand-magic-sparkles"></i> Quiero uno personalizado</a>
+
+
+
+   </div>
+
+
+
+   <div class="motto">Si es tradición, no pasa de moda.</div>
+
+
+
+ </div>
+
+
+
+ <div class="hero-photo">
+
+
+
+   <img id="heroSlideImage" src="img/unicornio.jpg" alt="Unicornio tejido a mano">
+
+   <button class="hero-slider-btn hero-slider-prev" id="heroPrev" type="button" aria-label="Imagen anterior"><i class="fa-solid fa-chevron-left"></i></button>
+
+   <button class="hero-slider-btn hero-slider-next" id="heroNext" type="button" aria-label="Imagen siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+
+   <div class="hero-dots" id="heroDots" aria-label="Selector de imágenes"></div>
+
+   <div class="photo-caption"><strong id="heroSlideTitle">De una idea a un tejido único.</strong><small id="heroSlideText">Colores, tamaños y detalles pueden personalizarse según cada encargo.</small></div>
+
+
+
+ </div>
+
+
 
 </section>
+
+
+
+
 
 
 
 <section class="section container" id="trabajos">
 
- <div class="section-head"><div><div class="kicker">Portafolio artesanal</div><h2>Trabajos realizados</h2></div><p>Una selección de encargos reales. Puedes tomar uno como referencia o contarnos una idea completamente nueva.</p></div>
 
- <div class="filters">
 
-   <button class="filter active" data-filter="todos">Todos</button>
+ <div class="section-head"><div><div class="kicker">Portafolio artesanal</div><h2>Trabajos realizados</h2></div><p>Una selección de encargos reales. Puedes tomar uno como referencia o contarnos una idea completamente nueva.</p></div>
 
-   <button class="filter" data-filter="personajes">Personajes</button>
 
-   <button class="filter" data-filter="muñecos">Muñecos</button>
 
-   <button class="filter" data-filter="accesorios">Accesorios</button>
+ <div class="filters">
 
- </div>
 
- <div class="grid" id="grid"></div>
 
- <div class="more-wrap"><button class="btn secondary" id="moreBtn"><i class="fa-solid fa-chevron-down"></i> Ver todos los trabajos</button></div>
+   <button class="filter active" data-filter="todos">Todos</button>
+
+
+
+   <button class="filter" data-filter="personajes">Personajes</button>
+
+
+
+   <button class="filter" data-filter="muñecos">Muñecos</button>
+
+
+
+   <button class="filter" data-filter="accesorios">Accesorios</button>
+
+
+
+ </div>
+
+
+
+ <div class="grid" id="grid"></div>
+
+
+
+ <div class="more-wrap"><button class="btn secondary" id="moreBtn"><i class="fa-solid fa-chevron-down"></i> Ver todos los trabajos</button></div>
+
+
 
 </section>
+
+
+
+
 
 
 
 <section class="section container" id="historia">
- <div class="story">
 
-   <div class="story-intro">
-     <div class="story-origin-photo">
-       <img src="img/charllot.jpg" alt="Primeros tejidos de La Tela de Charllot">
-       <div class="story-origin-label">
-         <strong>Donde comenzó la historia.</strong>
-         <small>Uno de los primeros tejidos que dio origen a La Tela de Charllot.</small>
-       </div>
-     </div>
+ <div class="story">
 
-     <div>
-       <div class="kicker">Nuestra historia</div>
-       <h2>Una marca nacida desde lo artesanal.</h2>
-       <p>La Tela de Charllot nació del gusto por el tejido y la creación de piezas hechas a mano. Lo que comenzó con los primeros trabajos personales fue creciendo, encargo a encargo, hasta convertirse en una colección de personajes, regalos y piezas personalizadas.</p>
 
-       <div class="story-points">
-         <div><i class="fa-solid fa-check"></i><span>Piezas elaboradas a mano y por encargo.</span></div>
-         <div><i class="fa-solid fa-check"></i><span>Diseños inspirados en ideas, personajes y ocasiones especiales.</span></div>
-         <div><i class="fa-solid fa-check"></i><span>Atención cercana para definir cada detalle antes de comenzar.</span></div>
-       </div>
-     </div>
-   </div>
 
-   <div class="story-quote">
-     <img src="img/consejo.jpg" alt="Reflexión sobre el valor del trabajo artesanal">
-     <div class="story-quote-copy">
-       <div class="kicker">El valor de lo hecho a mano</div>
-       <h3>Detrás de cada pieza hay tiempo, dedicación y aprendizaje.</h3>
-       <p>Cada tejido reúne horas de trabajo, pruebas y detalles realizados a mano. Por eso, cada encargo busca conservar el carácter personal que dio origen al emprendimiento.</p>
-       <p><strong>Si es tradición, no pasa de moda.</strong></p>
-     </div>
-   </div>
+   <div class="story-intro">
 
- </div>
+     <div class="story-origin-photo">
+
+       <img src="img/charllot.jpg" alt="Primeros tejidos de La Tela de Charllot">
+
+       <div class="story-origin-label">
+
+         <strong>Donde comenzó la historia.</strong>
+
+         <small>Uno de los primeros tejidos que dio origen a La Tela de Charllot.</small>
+
+       </div>
+
+     </div>
+
+
+
+     <div>
+
+       <div class="kicker">Nuestra historia</div>
+
+       <h2>Una marca nacida desde lo artesanal.</h2>
+
+       <p>La Tela de Charllot nació del gusto por el tejido y la creación de piezas hechas a mano. Lo que comenzó con los primeros trabajos personales fue creciendo, encargo a encargo, hasta convertirse en una colección de personajes, regalos y piezas personalizadas.</p>
+
+
+
+       <div class="story-points">
+
+         <div><i class="fa-solid fa-check"></i><span>Piezas elaboradas a mano y por encargo.</span></div>
+
+         <div><i class="fa-solid fa-check"></i><span>Diseños inspirados en ideas, personajes y ocasiones especiales.</span></div>
+
+         <div><i class="fa-solid fa-check"></i><span>Atención cercana para definir cada detalle antes de comenzar.</span></div>
+
+       </div>
+
+     </div>
+
+   </div>
+
+
+
+   <div class="story-quote">
+
+     <img src="img/consejo.jpg" alt="Reflexión sobre el valor del trabajo artesanal">
+
+     <div class="story-quote-copy">
+
+       <div class="kicker">El valor de lo hecho a mano</div>
+
+       <h3>Detrás de cada pieza hay tiempo, dedicación y aprendizaje.</h3>
+
+       <p>Cada tejido reúne horas de trabajo, pruebas y detalles realizados a mano. Por eso, cada encargo busca conservar el carácter personal que dio origen al emprendimiento.</p>
+
+       <p><strong>Si es tradición, no pasa de moda.</strong></p>
+
+     </div>
+
+   </div>
+
+
+
+ </div>
+
 </section>
+
+
+
+
 
 
 
 <section class="section container" id="como-pedir">
 
- <div class="section-head"><div><div class="kicker">Así de simple</div><h2>¿Cómo pedir?</h2></div><p>Cuéntanos qué tienes en mente y coordinamos contigo los detalles necesarios para preparar la cotización.</p></div>
 
- <div class="steps">
 
-  <article class="step"><div class="number">1</div><h3>Inspírate</h3><p>Revisa trabajos anteriores o comienza desde una idea completamente nueva.</p></article>
+ <div class="section-head"><div><div class="kicker">Así de simple</div><h2>¿Cómo pedir?</h2></div><p>Cuéntanos qué tienes en mente y coordinamos contigo los detalles necesarios para preparar la cotización.</p></div>
 
-  <article class="step"><div class="number">2</div><h3>Personaliza</h3><p>Indica personaje o idea, colores, tamaño aproximado y los detalles que te gustaría incluir.</p></article>
 
-  <article class="step"><div class="number">3</div><h3>Coordina</h3><p>Envíanos tu solicitud y conversamos por WhatsApp para confirmar precio, disponibilidad y plazo.</p></article>
 
- </div>
+ <div class="steps">
+
+
+
+  <article class="step"><div class="number">1</div><h3>Inspírate</h3><p>Revisa trabajos anteriores o comienza desde una idea completamente nueva.</p></article>
+
+
+
+  <article class="step"><div class="number">2</div><h3>Personaliza</h3><p>Indica personaje o idea, colores, tamaño aproximado y los detalles que te gustaría incluir.</p></article>
+
+
+
+  <article class="step"><div class="number">3</div><h3>Coordina</h3><p>Envíanos tu solicitud y conversamos por WhatsApp para confirmar precio, disponibilidad y plazo.</p></article>
+
+
+
+ </div>
+
+
 
 </section>
+
+
+
+
 
 
 
 <section class="section container" id="cuidados">
 
- <div class="care">
 
-   <div class="care-photo"><img src="img/cuidados.jpg" alt="Consejos para cuidar un amigurumi"></div>
 
-   <div><div class="kicker">Después de recibirlo</div><h2>Cuida tu amigurumi</h2>
+ <div class="care">
 
-   <p>Los tejidos hechos a mano requieren cuidados sencillos para conservar su forma, sus colores y sus terminaciones por más tiempo.</p>
 
-   <div class="tips"><div class="tip"><i class="fa-solid fa-hand-sparkles"></i><span>Manipula la pieza con cuidado, especialmente en accesorios y detalles pequeños.</span></div><div class="tip"><i class="fa-solid fa-droplet"></i><span>Para la limpieza, sigue las recomendaciones indicadas para el tejido y evita tratamientos agresivos.</span></div><div class="tip"><i class="fa-solid fa-sun"></i><span>Procura mantenerla lejos de condiciones que puedan deteriorar innecesariamente sus fibras o colores.</span></div></div>
 
-   </div>
+   <div class="care-photo"><img src="img/cuidados.jpg" alt="Consejos para cuidar un amigurumi"></div>
 
- </div>
+
+
+   <div><div class="kicker">Después de recibirlo</div><h2>Cuida tu amigurumi</h2>
+
+
+
+   <p>Los tejidos hechos a mano requieren cuidados sencillos para conservar su forma, sus colores y sus terminaciones por más tiempo.</p>
+
+
+
+   <div class="tips"><div class="tip"><i class="fa-solid fa-hand-sparkles"></i><span>Manipula la pieza con cuidado, especialmente en accesorios y detalles pequeños.</span></div><div class="tip"><i class="fa-solid fa-droplet"></i><span>Para la limpieza, sigue las recomendaciones indicadas para el tejido y evita tratamientos agresivos.</span></div><div class="tip"><i class="fa-solid fa-sun"></i><span>Procura mantenerla lejos de condiciones que puedan deteriorar innecesariamente sus fibras o colores.</span></div></div>
+
+
+
+   </div>
+
+
+
+ </div>
+
+
 
 </section>
+
+
+
+
 
 
 
 <section class="section container" id="pedido">
 
- <div class="order">
 
-  <div class="order-copy"><div class="kicker">Solicita una cotización</div><h2>Cuéntanos qué quieres crear</h2><p>Completa los detalles principales de tu idea. Podrás revisar la solicitud antes de enviarla por WhatsApp.</p>
 
-   <div class="order-points"><div><i class="fa-solid fa-palette"></i><span>Personaliza colores y detalles.</span></div><div><i class="fa-solid fa-ruler"></i><span>Indica el tamaño aproximado que necesitas.</span></div><div><i class="fa-solid fa-truck"></i><span>Retiro o envío sujeto a coordinación.</span></div></div>
-
-  </div>
+ <div class="order">
 
 
 
-  <form id="form" novalidate>
+  <div class="order-copy"><div class="kicker">Solicita una cotización</div><h2>Cuéntanos qué quieres crear</h2><p>Completa los detalles principales de tu idea. Podrás revisar la solicitud antes de enviarla por WhatsApp.</p>
 
-   <div class="row">
 
-    <div class="field"><label for="name">Nombre \*</label><input id="name" maxlength="60" autocomplete="name" placeholder="Tu nombre"><span class="error" id="nameError"></span></div>
 
-    <div class="field"><label for="reference">Trabajo de referencia</label><select id="reference"></select><span class="error"></span></div>
+   <div class="order-points"><div><i class="fa-solid fa-palette"></i><span>Personaliza colores y detalles.</span></div><div><i class="fa-solid fa-ruler"></i><span>Indica el tamaño aproximado que necesitas.</span></div><div><i class="fa-solid fa-truck"></i><span>Retiro o envío sujeto a coordinación.</span></div></div>
 
-   </div>
 
-   <div class="row">
 
-    <div class="field"><label for="size">Tamaño aproximado</label><select id="size"><option value="Por definir">Por definir</option><option>Pequeño</option><option>Mediano</option><option>Grande</option></select><span class="error"></span></div>
+  </div>
 
-    <div class="field"><label for="delivery">Entrega</label><select id="delivery"><option>Por coordinar</option><option>Retiro presencial</option><option>Envío dentro de Chile</option></select><span class="error"></span></div>
 
-   </div>
 
-   <div class="field"><label for="colors">Colores o estilo</label><input id="colors" maxlength="100" placeholder="Ej.: verde y crema, tonos pastel..."><span class="error"></span></div>
 
-   <div class="field"><label for="details">Cuéntanos tu idea \*</label><textarea id="details" maxlength="700" placeholder="Describe el personaje, accesorio, regalo o detalle que tienes en mente..."></textarea><span class="error" id="detailsError"></span></div>
 
-   <button class="btn primary" type="button" id="preview"><i class="fa-solid fa-clipboard-check"></i> Revisar solicitud</button>
 
-   <div class="summary" id="summary"></div>
 
-   <button class="btn green" id="send" type="submit"><i class="fa-brands fa-whatsapp"></i> Enviar solicitud por WhatsApp</button>
+  <form id="form" novalidate>
 
-   <div class="note-small">El precio, plazo y disponibilidad se confirman personalmente antes de realizar el encargo.</div>
 
-  </form>
 
- </div>
+   <div class="row">
+
+
+
+    <div class="field"><label for="name">Nombre \\*</label><input id="name" maxlength="60" autocomplete="name" placeholder="Tu nombre"><span class="error" id="nameError"></span></div>
+
+
+
+    <div class="field"><label for="reference">Trabajo de referencia</label><select id="reference"></select><span class="error"></span></div>
+
+
+
+   </div>
+
+
+
+   <div class="row">
+
+
+
+    <div class="field"><label for="size">Tamaño aproximado</label><select id="size"><option value="Por definir">Por definir</option><option>Pequeño</option><option>Mediano</option><option>Grande</option></select><span class="error"></span></div>
+
+
+
+    <div class="field"><label for="delivery">Entrega</label><select id="delivery"><option>Por coordinar</option><option>Retiro presencial</option><option>Envío dentro de Chile</option></select><span class="error"></span></div>
+
+
+
+   </div>
+
+
+
+   <div class="field"><label for="colors">Colores o estilo</label><input id="colors" maxlength="100" placeholder="Ej.: verde y crema, tonos pastel..."><span class="error"></span></div>
+
+
+
+   <div class="field"><label for="details">Cuéntanos tu idea \\*</label><textarea id="details" maxlength="700" placeholder="Describe el personaje, accesorio, regalo o detalle que tienes en mente..."></textarea><span class="error" id="detailsError"></span></div>
+
+
+
+   <button class="btn primary" type="button" id="preview"><i class="fa-solid fa-clipboard-check"></i> Revisar solicitud</button>
+
+
+
+   <div class="summary" id="summary"></div>
+
+
+
+   <button class="btn green" id="send" type="submit"><i class="fa-brands fa-whatsapp"></i> Enviar solicitud por WhatsApp</button>
+
+
+
+   <div class="note-small">El precio, plazo y disponibilidad se confirman personalmente antes de realizar el encargo.</div>
+
+
+
+  </form>
+
+
+
+ </div>
+
+
 
 </section>
+
+
 
 </main>
 
 
 
-<footer>
- <div class="container footer">
-  <div class="footer-brand">
-   <img class="footer-logo" src="img/logo-footer.png" alt="La Tela de Charllot">
-   <p>Amigurumis y tejidos personalizados hechos a mano.</p>
-   <small>Si es tradición, no pasa de moda. · Sitio desarrollado por <a class="wayne" id="wayne" href="#" target="_blank" rel="noopener">Wayne Dev</a></small>
-  </div>
 
-  <div class="social">
-   <a id="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-   <a id="facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-   <a id="footerWsp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-  </div>
- </div>
+
+
+
+<footer>
+
+ <div class="container footer">
+
+  <div class="footer-brand">
+
+   <img class="footer-logo" src="img/logo-header.png" alt="La Tela de Charllot">
+
+   <p>Amigurumis y tejidos personalizados hechos a mano.</p>
+
+   <small>Si es tradición, no pasa de moda. · Sitio desarrollado por <a class="wayne" id="wayne" href="#" target="_blank" rel="noopener">Wayne Dev</a></small>
+
+  </div>
+
+
+
+  <div class="social">
+
+   <a id="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+
+   <a id="facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+
+   <a id="footerWsp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+  </div>
+
+ </div>
+
 </footer>
+
+
+
+
 
 
 
 <script>
 
+
+
 const CONFIG={
 
- whatsapp:"56920180655",
 
- instagram:"https://www.instagram.com/la_teladecharllot/",
 
- facebook:"https://www.facebook.com/devoraherrera.m?locale=es_LA",
+ whatsapp:"56920180655",
 
- wayne:"https://andreswayne8.github.io/wayne-dev"
+
+
+ instagram:"https://www.instagram.com/la_teladecharllot/",
+
+
+
+ facebook:"https://www.facebook.com/devoraherrera.m?locale=es_LA",
+
+
+
+ wayne:"https://andreswayne8.github.io/wayne-dev"
+
+
 
 };
 
 
 
+
+
+
+
 const products=[
 
- {id:1,name:"Unicornio",category:"muñecos",image:"img/unicornio.jpg",description:"Amigurumi tejido a mano con detalles personalizados."},
 
- {id:2,name:"Caballito",category:"muñecos",image:"img/caballo.jpg",description:"Trabajo artesanal realizado como encargo personalizado."},
 
- {id:3,name:"Zorrito",category:"muñecos",image:"img/zorro.jpg",description:"Figura tejida a mano con terminaciones artesanales."},
+ {id:1,name:"Unicornio",category:"muñecos",image:"img/unicornio.jpg",description:"Amigurumi tejido a mano con detalles personalizados."},
 
- {id:4,name:"Muñeca personalizada",category:"muñecos",image:"img/niña.jpg",description:"Muñeca artesanal creada con detalles personalizados."},
 
- {id:5,name:"Pingüino",category:"muñecos",image:"img/pinguino.jpg",description:"Muñeco tejido a mano con accesorios y detalles."},
 
- {id:6,name:"Batman",category:"personajes",image:"img/batman.jpg",description:"Personaje adaptado al formato tejido artesanal."},
+ {id:2,name:"Caballito",category:"muñecos",image:"img/caballo.jpg",description:"Trabajo artesanal realizado como encargo personalizado."},
 
- {id:7,name:"Harry",category:"personajes",image:"img/harry.jpg",description:"Personaje tejido a mano como encargo personalizado."},
 
- {id:8,name:"Naruto",category:"personajes",image:"img/naruto.jpg",description:"Amigurumi inspirado en personaje y realizado artesanalmente."},
 
- {id:9,name:"Nezuko",category:"personajes",image:"img/nezuko.jpg",description:"Trabajo personalizado tejido a mano con detalles característicos."},
+ {id:3,name:"Zorrito",category:"muñecos",image:"img/zorro.jpg",description:"Figura tejida a mano con terminaciones artesanales."},
 
- {id:10,name:"Hello Kitty",category:"personajes",image:"img/kitty.jpg",description:"Personaje tejido a mano en formato amigurumi."},
 
- {id:11,name:"Impostor",category:"personajes",image:"img/impostor.jpg",description:"Figura tejida inspirada en personaje."},
 
- {id:12,name:"Jack",category:"personajes",image:"img/jack.jpg",description:"Personaje realizado artesanalmente en tejido."},
+ {id:4,name:"Muñeca personalizada",category:"muñecos",image:"img/niña.jpg",description:"Muñeca artesanal creada con detalles personalizados."},
 
- {id:13,name:"Donas tejidas",category:"accesorios",image:"img/donas.jpg",description:"Pequeños tejidos decorativos para regalos y detalles."},
 
- {id:14,name:"Girasoles tejidos",category:"accesorios",image:"img/girasoles.jpg",description:"Trabajo decorativo tejido a mano con motivo floral."},
 
- {id:15,name:"Helados tejidos",category:"accesorios",image:"img/helados.jpg",description:"Mini tejidos decorativos realizados artesanalmente."},
+ {id:5,name:"Pingüino",category:"muñecos",image:"img/pinguino.jpg",description:"Muñeco tejido a mano con accesorios y detalles."},
 
- {id:16,name:"Paltas tejidas",category:"accesorios",image:"img/paltas.jpg",description:"Pequeños tejidos decorativos realizados a mano."}
+
+
+ {id:6,name:"Batman",category:"personajes",image:"img/batman.jpg",description:"Personaje adaptado al formato tejido artesanal."},
+
+
+
+ {id:7,name:"Harry",category:"personajes",image:"img/harry.jpg",description:"Personaje tejido a mano como encargo personalizado."},
+
+
+
+ {id:8,name:"Naruto",category:"personajes",image:"img/naruto.jpg",description:"Amigurumi inspirado en personaje y realizado artesanalmente."},
+
+
+
+ {id:9,name:"Nezuko",category:"personajes",image:"img/nezuko.jpg",description:"Trabajo personalizado tejido a mano con detalles característicos."},
+
+
+
+ {id:10,name:"Hello Kitty",category:"personajes",image:"img/kitty.jpg",description:"Personaje tejido a mano en formato amigurumi."},
+
+
+
+ {id:11,name:"Impostor",category:"personajes",image:"img/impostor.jpg",description:"Figura tejida inspirada en personaje."},
+
+
+
+ {id:12,name:"Jack",category:"personajes",image:"img/jack.jpg",description:"Personaje realizado artesanalmente en tejido."},
+
+
+
+ {id:13,name:"Donas tejidas",category:"accesorios",image:"img/donas.jpg",description:"Pequeños tejidos decorativos para regalos y detalles."},
+
+
+
+ {id:14,name:"Girasoles tejidos",category:"accesorios",image:"img/girasoles.jpg",description:"Trabajo decorativo tejido a mano con motivo floral."},
+
+
+
+ {id:15,name:"Helados tejidos",category:"accesorios",image:"img/helados.jpg",description:"Mini tejidos decorativos realizados artesanalmente."},
+
+
+
+ {id:16,name:"Paltas tejidas",category:"accesorios",image:"img/paltas.jpg",description:"Pequeños tejidos decorativos realizados a mano."}
+
+
 
 ];
+
+
+
+
 
 
 
 const grid=document.getElementById("grid");
 
+
+
 const moreBtn=document.getElementById("moreBtn");
+
+
 
 const reference=document.getElementById("reference");
 
+
+
 const summary=document.getElementById("summary");
 
+
+
 const send=document.getElementById("send");
+
+
 
 let currentFilter="todos",expanded=false;
 
 
 
+
+
+
+
 function visibleProducts(){
 
- const filtered=currentFilter==="todos"?products:products.filter(p=>p.category===currentFilter);
 
- return expanded?filtered:filtered.slice(0,6);
+
+ const filtered=currentFilter==="todos"?products:products.filter(p=>p.category===currentFilter);
+
+
+
+ return expanded?filtered:filtered.slice(0,6);
+
+
 
 }
+
+
 
 function render(){
 
- grid.innerHTML=visibleProducts().map(p=>`
 
- <article class="card">
 
-  <div class="card-media">
-
-   <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
-
-   <span class="badge">Trabajo realizado</span>
-
-  </div>
-
-  <div class="card-body">
-
-   <span class="category">${p.category}</span>
-
-   <h3>${p.name}</h3><p>${p.description}</p>
-
-   <div class="card-bottom"><div><strong>Cotización personalizada</strong><small>Precio y plazo según el encargo</small></div>
-
-   <button class="btn primary" type="button" onclick="choose(${p.id})">Solicitar similar</button></div>
-
-  </div>
-
- </article>`).join("");
+ grid.innerHTML=visibleProducts().map(p=>\`
 
 
 
- const total=(currentFilter==="todos"?products:products.filter(p=>p.category===currentFilter)).length;
+ <article class="card">
 
- moreBtn.style.display=total>6?"inline-flex":"none";
 
- moreBtn.innerHTML=expanded?'<i class="fa-solid fa-chevron-up"></i> Ver menos':'<i class="fa-solid fa-chevron-down"></i> Ver todos los trabajos';
+
+  <div class="card-media">
+
+
+
+   <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
+
+
+
+   <span class="badge">Trabajo realizado</span>
+
+
+
+  </div>
+
+
+
+  <div class="card-body">
+
+
+
+   <span class="category">${p.category}</span>
+
+
+
+   <h3>${p.name}</h3><p>${p.description}</p>
+
+
+
+   <div class="card-bottom"><div><strong>Cotización personalizada</strong><small>Precio y plazo según el encargo</small></div>
+
+
+
+   <button class="btn primary" type="button" onclick="choose(${p.id})">Solicitar similar</button></div>
+
+
+
+  </div>
+
+
+
+ </article>\`).join("");
+
+
+
+
+
+
+
+ const total=(currentFilter==="todos"?products:products.filter(p=>p.category===currentFilter)).length;
+
+
+
+ moreBtn.style.display=total>6?"inline-flex":"none";
+
+
+
+ moreBtn.innerHTML=expanded?'<i class="fa-solid fa-chevron-up"></i> Ver menos':'<i class="fa-solid fa-chevron-down"></i> Ver todos los trabajos';
+
+
 
 }
+
+
 
 function fillReference(){
 
- reference.innerHTML='<option value="custom">Pedido personalizado / otra idea</option>'+products.map(p=>`<option value="${p.id}">${p.name}</option>`).join("");
+
+
+ reference.innerHTML='<option value="custom">Pedido personalizado / otra idea</option>'+products.map(p=>\`<option value="${p.id}">${p.name}</option>\`).join("");
+
+
 
 }
+
+
 
 // BOTÓN "Solicitar similar": elige una referencia y lleva al formulario.
+
 function choose(id){
 
- reference.value=String(id);
 
- document.getElementById("pedido").scrollIntoView({behavior:"smooth"});
 
- setTimeout(()=>document.getElementById("details").focus(),500);
+ reference.value=String(id);
+
+
+
+ document.getElementById("pedido").scrollIntoView({behavior:"smooth"});
+
+
+
+ setTimeout(()=>document.getElementById("details").focus(),500);
+
+
 
 }
+
+
 
 document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{
 
- document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
 
- btn.classList.add("active");currentFilter=btn.dataset.filter;expanded=false;render();
+
+ document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
+
+
+
+ btn.classList.add("active");currentFilter=btn.dataset.filter;expanded=false;render();
+
+
 
 }));
+
+
 
 moreBtn.addEventListener("click",()=>{expanded=!expanded;render()});
 
 
 
+
+
+
+
 // clean(): limpia caracteres básicos antes de mostrar/enviar datos.
+
 function clean(v){return String(v??"").replace(/[<>]/g,"").trim()}
+
+
 
 function data(){
 
- const p=products.find(x=>x.id===Number(reference.value));
 
- return{
 
-  name:clean(document.getElementById("name").value),
+ const p=products.find(x=>x.id===Number(reference.value));
 
-  ref:p?p.name:"Pedido personalizado / otra idea",
 
-  size:clean(document.getElementById("size").value),
 
-  delivery:clean(document.getElementById("delivery").value),
+ return{
 
-  colors:clean(document.getElementById("colors").value)||"Por definir",
 
-  details:clean(document.getElementById("details").value)
 
- };
+  name:clean(document.getElementById("name").value),
+
+
+
+  ref:p?p.name:"Pedido personalizado / otra idea",
+
+
+
+  size:clean(document.getElementById("size").value),
+
+
+
+  delivery:clean(document.getElementById("delivery").value),
+
+
+
+  colors:clean(document.getElementById("colors").value)||"Por definir",
+
+
+
+  details:clean(document.getElementById("details").value)
+
+
+
+ };
+
+
 
 }
+
+
 
 // validate(): controla los campos mínimos obligatorios.
+
 function validate(d){
 
- let ok=true;
 
- const n=document.getElementById("name"),det=document.getElementById("details");
 
- n.classList.remove("invalid");det.classList.remove("invalid");
+ let ok=true;
 
- document.getElementById("nameError").textContent="";document.getElementById("detailsError").textContent="";
 
- if(d.name.length<2){n.classList.add("invalid");document.getElementById("nameError").textContent="Ingresa tu nombre.";ok=false}
 
- if(d.details.length<10){det.classList.add("invalid");document.getElementById("detailsError").textContent="Cuéntanos un poco más sobre tu idea.";ok=false}
+ const n=document.getElementById("name"),det=document.getElementById("details");
 
- return ok;
+
+
+ n.classList.remove("invalid");det.classList.remove("invalid");
+
+
+
+ document.getElementById("nameError").textContent="";document.getElementById("detailsError").textContent="";
+
+
+
+ if(d.name.length<2){n.classList.add("invalid");document.getElementById("nameError").textContent="Ingresa tu nombre.";ok=false}
+
+
+
+ if(d.details.length<10){det.classList.add("invalid");document.getElementById("detailsError").textContent="Cuéntanos un poco más sobre tu idea.";ok=false}
+
+
+
+ return ok;
+
+
 
 }
+
+
 
 function resetApproval(){
 
- summary.classList.remove("show");send.classList.remove("ready");
+
+
+ summary.classList.remove("show");send.classList.remove("ready");
+
+
 
 }
+
+
 
 ["name","reference","size","delivery","colors","details"].forEach(id=>document.getElementById(id).addEventListener("input",resetApproval));
 
 
 
+
+
+
+
 // BOTÓN "Revisar solicitud": valida, crea el resumen y recién habilita WhatsApp.
+
 document.getElementById("preview").addEventListener("click",()=>{
 
- const d=data();if(!validate(d)){resetApproval();return}
 
- summary.innerHTML=`<h3>Revisa tu solicitud</h3>
 
- <p><strong>Nombre:</strong> ${d.name}</p>
+ const d=data();if(!validate(d)){resetApproval();return}
 
- <p><strong>Referencia:</strong> ${d.ref}</p>
 
- <p><strong>Tamaño:</strong> ${d.size}</p>
 
- <p><strong>Colores/estilo:</strong> ${d.colors}</p>
+ summary.innerHTML=\`<h3>Revisa tu solicitud</h3>
 
- <p><strong>Entrega:</strong> ${d.delivery}</p>
 
- <p><strong>Idea:</strong> ${d.details}</p>`;
 
- summary.classList.add("show");send.classList.add("ready");
+ <p><strong>Nombre:</strong> ${d.name}</p>
+
+
+
+ <p><strong>Referencia:</strong> ${d.ref}</p>
+
+
+
+ <p><strong>Tamaño:</strong> ${d.size}</p>
+
+
+
+ <p><strong>Colores/estilo:</strong> ${d.colors}</p>
+
+
+
+ <p><strong>Entrega:</strong> ${d.delivery}</p>
+
+
+
+ <p><strong>Idea:</strong> ${d.details}</p>\`;
+
+
+
+ summary.classList.add("show");send.classList.add("ready");
+
+
 
 });
 
 
 
+
+
+
+
 // BOTÓN "Enviar solicitud por WhatsApp": arma el mensaje estructurado y abre wa.me.
+
 document.getElementById("form").addEventListener("submit",e=>{
 
- e.preventDefault();const d=data();if(!validate(d)||!send.classList.contains("ready"))return;
 
- const msg=`Hola, soy ${d.name}. Quisiera solicitar una cotización en La Tela de Charllot.
+
+ e.preventDefault();const d=data();if(!validate(d)||!send.classList.contains("ready"))return;
+
+
+
+ const msg=\`Hola, soy ${d.name}. Quisiera solicitar una cotización en La Tela de Charllot.
+
+
+
+
 
 
 
 Referencia: ${d.ref}
 
+
+
 Tamaño: ${d.size}
 
+
+
 Colores/estilo: ${d.colors}
+
+
 
 Entrega: ${d.delivery}
 
 
 
+
+
+
+
 Mi idea:
+
+
 
 ${d.details}
 
 
 
-Quedo atento/a para confirmar precio, disponibilidad y plazo.`;
 
- window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`,"_blank","noopener");
+
+
+
+Quedo atento/a para confirmar precio, disponibilidad y plazo.\`;
+
+
+
+ window.open(\`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}\`,"_blank","noopener");
+
+
 
 });
+
+
+
+
 
 
 
 const hello=encodeURIComponent("Hola, quisiera consultar por un tejido personalizado de La Tela de Charllot.");
 
-document.getElementById("topWsp").href=`https://wa.me/${CONFIG.whatsapp}?text=${hello}`;
 
-document.getElementById("footerWsp").href=`https://wa.me/${CONFIG.whatsapp}?text=${hello}`;
+
+document.getElementById("topWsp").href=\`https://wa.me/${CONFIG.whatsapp}?text=${hello}\`;
+
+
+
+document.getElementById("footerWsp").href=\`https://wa.me/${CONFIG.whatsapp}?text=${hello}\`;
+
+
 
 document.getElementById("instagram").href=CONFIG.instagram;
 
+
+
 document.getElementById("facebook").href=CONFIG.facebook;
+
+
 
 document.getElementById("wayne").href=CONFIG.wayne;
 
 
 
+
+
+
+
 document.getElementById("menu").addEventListener("click",()=>document.getElementById("nav").classList.toggle("open"));
+
+
 
 document.querySelectorAll("#nav a").forEach(a=>a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open")));
 
 
 
+
+
+
+
 // Carrusel principal: trabajos reales, cambio automático y control manual.
+
 const heroSlides=[
- {image:"img/unicornio.jpg",alt:"Unicornio tejido a mano",title:"De una idea a un tejido único.",text:"Colores, tamaños y detalles pueden personalizarse según cada encargo."},
- {image:"img/batman.jpg",alt:"Batman tejido a mano",title:"Tus personajes, llevados al tejido.",text:"Cada encargo puede adaptarse en colores, tamaño y detalles para hacerlo especial."},
- {image:"img/naruto.jpg",alt:"Naruto tejido a mano",title:"Personajes que cobran otra forma.",text:"Ideas inspiradas en personajes también pueden convertirse en piezas tejidas a mano."},
- {image:"img/girasoles.jpg",alt:"Girasoles tejidos a mano",title:"Detalles hechos para regalar.",text:"No todo son personajes: también creamos accesorios y detalles decorativos tejidos."}
+
+ {image:"img/unicornio.jpg",alt:"Unicornio tejido a mano",title:"De una idea a un tejido único.",text:"Colores, tamaños y detalles pueden personalizarse según cada encargo."},
+
+ {image:"img/batman.jpg",alt:"Batman tejido a mano",title:"Tus personajes, llevados al tejido.",text:"Cada encargo puede adaptarse en colores, tamaño y detalles para hacerlo especial."},
+
+ {image:"img/naruto.jpg",alt:"Naruto tejido a mano",title:"Personajes que cobran otra forma.",text:"Ideas inspiradas en personajes también pueden convertirse en piezas tejidas a mano."},
+
+ {image:"img/girasoles.jpg",alt:"Girasoles tejidos a mano",title:"Detalles hechos para regalar.",text:"No todo son personajes: también creamos accesorios y detalles decorativos tejidos."}
+
 ];
+
 let heroSlideIndex=0;
+
 let heroTimer;
+
 const heroImage=document.getElementById("heroSlideImage");
+
 const heroTitle=document.getElementById("heroSlideTitle");
+
 const heroText=document.getElementById("heroSlideText");
+
 const heroDots=document.getElementById("heroDots");
 
+
+
 heroSlides.forEach((_,i)=>{
- const dot=document.createElement("button");
- dot.type="button"; dot.className="hero-dot"; dot.setAttribute("aria-label",`Ver imagen ${i+1}`);
- dot.addEventListener("click",()=>{showHeroSlide(i);restartHeroTimer();});
- heroDots.appendChild(dot);
+
+ const dot=document.createElement("button");
+
+ dot.type="button"; dot.className="hero-dot"; dot.setAttribute("aria-label",\`Ver imagen ${i+1}\`);
+
+ dot.addEventListener("click",()=>{showHeroSlide(i);restartHeroTimer();});
+
+ heroDots.appendChild(dot);
+
 });
 
+
+
 function showHeroSlide(index){
- heroSlideIndex=(index+heroSlides.length)%heroSlides.length;
- const slide=heroSlides[heroSlideIndex];
- heroImage.classList.add("is-changing");
- setTimeout(()=>{
-   heroImage.src=slide.image; heroImage.alt=slide.alt; heroTitle.textContent=slide.title; heroText.textContent=slide.text;
-   [...heroDots.children].forEach((dot,i)=>dot.classList.toggle("active",i===heroSlideIndex));
-   heroImage.classList.remove("is-changing");
- },180);
+
+ heroSlideIndex=(index+heroSlides.length)%heroSlides.length;
+
+ const slide=heroSlides[heroSlideIndex];
+
+ heroImage.classList.add("is-changing");
+
+ setTimeout(()=>{
+
+   heroImage.src=slide.image; heroImage.alt=slide.alt; heroTitle.textContent=slide.title; heroText.textContent=slide.text;
+
+   [...heroDots.children].forEach((dot,i)=>dot.classList.toggle("active",i===heroSlideIndex));
+
+   heroImage.classList.remove("is-changing");
+
+ },180);
+
 }
+
 function restartHeroTimer(){
- clearInterval(heroTimer);
- heroTimer=setInterval(()=>showHeroSlide(heroSlideIndex+1),5000);
+
+ clearInterval(heroTimer);
+
+ heroTimer=setInterval(()=>showHeroSlide(heroSlideIndex+1),5000);
+
 }
+
 document.getElementById("heroPrev").addEventListener("click",()=>{showHeroSlide(heroSlideIndex-1);restartHeroTimer();});
+
 document.getElementById("heroNext").addEventListener("click",()=>{showHeroSlide(heroSlideIndex+1);restartHeroTimer();});
+
 showHeroSlide(0);
+
 restartHeroTimer();
+
+
+
 
 
 fillReference();render();
 
+
+
 </script>
 
+
+
 </body>
+
+
 
 </html>
